@@ -1,0 +1,23 @@
+{
+  "name": "qa-training",
+  "version": "1.0.0",
+  "description": "- Playwright (E2E testing)\r - TypeScript\r - GitHub Actions (CI/CD)\r - Postman (API testing)",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AymerickTilly/QA-training.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AymerickTilly/QA-training/issues"
+  },
+  "homepage": "https://github.com/AymerickTilly/QA-training#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  }
+}
