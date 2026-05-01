@@ -95,3 +95,26 @@ test('DELETE /booking deletes a booking', async ({ request }) => {
 
   expect(deleteResponse.status()).toBe(201);
 });
+
+test('GET /booking/:id returns 404 for non-existent booking', async ({ request }) => {
+  const response = await request.get(`${BASE_URL}/booking/999999`);
+  
+  expect(response.status()).toBe(404);
+});
+
+test('DELETE /booking returns 403 when no token provided', async ({ request }) => {
+  const response = await request.delete(`${BASE_URL}/booking/1`);
+  
+  expect(response.status()).toBe(403);
+});
+
+test('POST /booking returns error when required fields are missing', async ({ request }) => {
+  const response = await request.post(`${BASE_URL}/booking`, {
+    data: {
+      firstname: 'Aymerick'
+      // missing all other required fields
+    }
+  });
+
+  expect(response.status()).toBe(500);
+});
